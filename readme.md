@@ -1,2 +1,2 @@
 # TaylorNN
-Neural network for generating new Taylor Swift songs!!
+Neural network for generating new Taylor Swift songs!! Originally loosely based on [this article](https://www.activestate.com/blog/how-to-build-a-lyrics-generator-with-python-recurrent-neural-networks/).
