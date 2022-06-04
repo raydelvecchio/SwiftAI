@@ -7,6 +7,9 @@ from constants import DATA_LOCATION, SAVE_LOCATION
 
 class SwiftAI:
     def __init__(self, data_file, pred_len=5):
+        # preprocesses data in the init function since we need all of this even to generate new songs.
+        # because of this, every time we change the preprocess function (different cutoffs, pre_len, etc) we'll
+        # have to re-train and save the model to match.
         self.train_I, self.test_I, self.train_L, self.test_L, self.dictionary = preprocess(data_file, pred_len)
         self.total_sequences = len(self.train_I) + len(self.test_I)
         self.num_unique_words = len(self.dictionary)
@@ -18,6 +21,9 @@ class SwiftAI:
         self.model = self.create_model()
 
     def create_model(self):
+        """
+        Builds our model that we'll use to generate new songs. All layers and compilation defined here.
+        """
         nn = Sequential()
         nn.add(Embedding(input_dim=self.num_unique_words, output_dim=self.embedding_out_sz))
         nn.add(Bidirectional(LSTM(self.lstm_hidden_dim)))
@@ -27,6 +33,9 @@ class SwiftAI:
         return nn
 
     def train(self):
+        """
+        Trains our Taylor Swift model on the dataset!
+        """
         self.model.fit(self.generator_func(self.train_I, self.train_L),
                        steps_per_epoch=self.total_sequences / self.batch_sz + 1,
                        epochs=self.epochs, validation_data=self.generator_func(self.test_I, self.train_L),
@@ -45,11 +54,17 @@ class SwiftAI:
             yield x, y
 
     def save_model(self, location):
+        """
+        Saves our model locally to avoid training every time we need to call it. Ideally save only after training.
+        """
         print("Saving trained model...")
         self.model.save(location)
 
     @staticmethod
     def load_saved_model(location):
+        """
+        Loads the saved Keras model from the input location, then returns it for use in generating new songs.
+        """
         return load_model(location)
 
     def sample_word(self, preds, temperature=1.0):
@@ -95,16 +110,27 @@ class SwiftAI:
 
     @staticmethod
     def post_process_song(song):
+        """
+        Post processes any given peice of text to the desired format. In this case, we feed it our generated songs
+        to remove spaces and such.
+        """
         song = song.replace('\n\n\n', '\n\n')
         song = song.replace('\n\n', '\n')
         return song
 
     def make_random_seed(self):
+        """
+        Finds random seed in training inputs to start generating a song with.
+        """
         seed_idx = np.random.randint(len(self.train_I))
         seed = self.train_I[seed_idx]
         return seed
 
     def make_custom_seed(self):
+        """
+        Takes input from the user to start a seed phrase. Must include words found in the corpus, and the seed phrase
+        must be equal to the prediction length we used to train the model.
+        """
         all_words = self.dictionary.keys()
         invalid = True
         while invalid:

@@ -80,7 +80,8 @@ def preformat(filename):
 
 def preprocess(filename, pred_len=5):
     """
-    Preprocesses data into sequence/label (or input/label) pairs. Main endpoint for preprocessing.
+    Preprocesses data into sequence/label (or input/label) pairs. Ignores all uncommon words.
+    Main endpoint for preprocessing.
     """
     corpus, common, uncommon = preformat(filename)
     corpus_len = len(corpus)
@@ -97,6 +98,7 @@ def preprocess(filename, pred_len=5):
 
     # print(f'Number of text input-label pairs: {len(inputs)}')
 
+    # uses 5% of dataset for model validation
     train_I, test_I, train_L, test_L = skm.train_test_split(inputs, labels, test_size=0.05, random_state=69)
 
     return train_I, test_I, train_L, test_L, dictionary
