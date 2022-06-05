@@ -1,286 +1,63 @@
-[META TEXT] Generating songs with seed ['that', 'is', 'a', 'good', 'song']
-
-[META TEXT] Song with diversity 0.1:
-that is a good song 
- i was ridin in a getaway car 
- there was the one place you ever heard 
- come back be here come back be here 
- 
- oh-oh oh-oh 
- think i was there when you said forever and always 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it 
-
-[META TEXT] Song with diversity 0.2:
-that is a good song 
- i was ridin in a getaway car 
- there was the one place you ever heard 
- come back be here come back be here 
- i guess youre in new york today 
- 
- i dont know about you but im feeling 22 
- everything will be alright if we just keep dancing like were 
- 22 22 
- 
- it seems like one of those nights 
- we wont be sleeping 
- it feels like one of those nights 
- we wont be sleeping 
- it feels like one of those nights 
- we wont be sleeping 
- it feels like one of those nights 
- this place the one i have you 
- in my room you like 
- but i believe those things to be true we are ever gonna call it 
- fifteen 
- just think i am gone 
- but i just felt like you are 
- and i hope the sun see you now 
- just wanna be your 
- shake to it off i shake it off 
- i i i shake it off i shake it off 
- shake it off i shake it off 
- i i i shake 
-
-[META TEXT] Song with diversity 0.3:
-that is a good song 
- i was ridin in a getaway car 
- there was the one place you ever heard 
- come back be here come back be here 
- come back be here come back be here 
- come back be here come back be here 
- i guess youre in new york today 
- 
- i dont know about you but im feeling 22 
- everything will be alright if we just keep dancing like were 
- 22 22 
- 
- it seems like one of those nights 
- we wont be sleeping 
- it feels like one of those nights 
- this place the one i have you 
- i hit the long days 
- and i can see us twisted in my party 
- 
- but i i i just bad boy 
- i hit the ground running each night 
- i hit the middle from the night in my mind 
- i can see you starin honey 
- like you keep him 
- from the song in the car i keep singing 
- dont know why i do 
- 
- so i drive my bed 
- so dont blame me but 
- dont blame me love made me 
+[META TEXT] Generating songs with seed i want to kiss horse
 
 [META TEXT] Song with diversity 0.4:
-that is a good song 
- i was ridin in a getaway car 
- there was the one place you ever heard 
- come back be here come back be here 
- come back be here come back be here 
- come back be here come back be here 
- come back be here come back be here 
+i want to kiss horse i want to want you 
+ and i hope you know that 
+ every time i don’t i almost do i almost do 
  
- oh-oh oh-oh 
- think i was there when you said forever and always 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
+ and i just wanna tell you better 
+ you know that its not me 
+ 
+ that is it cool that i said all that 
 
 [META TEXT] Song with diversity 0.5:
-that is a good song 
- i was ridin in a getaway car 
- there was the one place you ever heard 
- come back be here come back be here 
+i want to kiss horse i want to want you 
+ and i hope you know that 
+ every time i don’t i almost do i almost do 
  
- oh-oh oh-oh 
- think i was there when you said forever and always 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it works 
- thats how you get the girl girl 
- and thats how it 
+ and i just wanna tell you better 
+ get me now 
+ but i didnt know it at fifteen 
+ 
+ when all you had 
 
 [META TEXT] Song with diversity 0.6:
-that is a good song 
- i didnt know it all in love 
- why would you have to 
- you are the one i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and all at once you are the one 
- i have been waiting waiting 
- body and soul ooh whoa 
- and 
+i want to kiss horse i want to want you 
+ i would you wanna take it away 
+ 
+ flashback him was a long night 
+ there was the last time 
+ never saw you that nobody never thought in the hallway that im not 
+ 
+ im so sorry that im sorry im 
 
 [META TEXT] Song with diversity 0.7:
-that is a good song 
- i was ridin in a getaway car 
+i want to kiss horse i want to want you i want to you 
  
- it was the great great to show you 
- ive never been you alone 
- you make me me for it all too much 
- because you are is not 
- you know why we are never getting back together like ever 
+ i was walking up the front room 
  
- we are never ever ever getting back together 
- you are never ever gonna be 
- 
- ask me in the car i used 
- 
- dont say yes run away now 
- ill meet you when youre out of the church at the back door 
- dont wait or say a rainy thing to say 
- when a boys and was really something 
- and just cant prove it 
- i think he did it but i just cant prove it 
- i think he did it but i just cant prove it 
- 
- no no body no crime 
- but i aint lettin up until the day i die 
- 
- he got my heartbeat 
- and i get a bad feeling 
- shes got the car 
- and youre not the only that its okay like a mad 
- 
- i think 
+ so step right out there is no amount 
+ of crying i can see you starin honey 
+ like you keep him 
+ i hope it be a end of 
 
 [META TEXT] Song with diversity 0.8:
-that is a good song 
- i hit the ground running each night 
- i hit the man 
- and all the pieces fall right into place 
- getting caught up in a moment 
- lipstick on your face 
- so it goes… 
- 
- come here dressed in black now 
- so so so it goes 
- come here dressed in black now 
- so so so it goes 
- come with you 
- dont leave me i get it wrong 
- you are so gorgeous it makes me so mad 
- you make me so happy it turns back to sad 
- theres nothing i hate more than what i cant have 
- and you are so gorgeous it makes me so mad 
- you make me so happy it turns back to sad 
- theres nothing i hate more than what i cant have 
- and you are so gorgeous it makes me so mad 
- youre gorgeous 
- you say that youd take me hand 
- its all at my door 
- if you just keep the one who will change them to fall where you touch 
- 
- everything will be alright if we just keep dancing like were 
- 
+i want to kiss horse or i want that i came away waiting 
+ now 
+ i wake up by the side 
+ who didnt leave the best friend 
+ never be the same before you 
+ and i was screaming long live all the magic we made 
+ and bring on all the pretenders 
 
 [META TEXT] Song with diversity 0.9:
-that is a good song 
- i was walking out on broken me 
- i wish you would come back 
- wish i never hung up the phone like i did i 
- wish you knew that 
- i miss you ever are never gonna 
- i have i i i wish i wish i 
+i want to kiss horse i want to want i hate you i 
  
- you said youd remember him 
- when i pulled up by the street 
- taking me back to a time we had feel our town and i feel you forget me like i hope to feel you 
+ school you were out from the dead i said that all the time 
+ we never bought a beautiful magic love there 
+ what a sad beautiful tragic love just 
  
- please am a princess this this 
- this is me in the world that could stop it 
- i had a bad feeling 
- and darling we both people 
- cause thats what they dont see mmm-mmm 
- im shining on you like 
- 
- never wanted this this last 
- i dont wanna think i dont wanna do 
- if im not what you wanted 
- 
- cause you were romeo i was a time to be this 
- is the story of us looks a lot like a tragedy now now now 
- i i i see how this is enough the feeling and you 
- and 
+ a friend is something for you that im 
 
 ====================================================================================================
 

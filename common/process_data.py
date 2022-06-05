@@ -1,5 +1,5 @@
 import lyricsgenius
-from constants import *
+from common.constants import *
 import json
 import re
 from nltk import FreqDist

@@ -11,3 +11,5 @@ ALBUMS = ['Taylor Swift', 'Fearless', 'Speak Now', 'Red', '1989', 'Reputation', 
 DATA_LOCATION = 'data_dump/all_lyrics.txt'
 
 SAVE_LOCATION = 'saved_model'
+
+TEMPERATURES = [i / 10 for i in range(5, 10)]
