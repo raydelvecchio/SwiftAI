@@ -13,8 +13,8 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown("""Fan of Taylor? Want her to release some new music? Write a song on a specific topic? Well 
             look no further than **SwiftAI**! I built a neural network to write brand new Taylor Swift songs
-            from YOUR input. Just put in a seed phrase you'd see in her music, filter through the generated songs, then 
-            pick the one you like best!""")
+            from YOUR input. Just put in a seed phrase, then look at the *five* generated
+             songs and pick the one you like best!""")
 
 with st.sidebar:
     st.markdown("""# Wait Time Information""")
