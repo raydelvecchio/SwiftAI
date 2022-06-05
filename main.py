@@ -1,6 +1,6 @@
 import streamlit as st
-from common.songwriter import write_songs
-from common.streamlit_support import *
+from songwriter import write_songs
+from streamlit_support import *
 
 st.set_page_config(page_title="SwiftAI", layout="wide", page_icon="favicon.ico")
 st.title("Taylor Swift Song Generator: SwiftAI")
@@ -20,7 +20,7 @@ with st.sidebar:
     st.markdown("""# Wait Time Information""")
     st.markdown("""Writing new songs is a *creative* process. The time to generate songs will **depend on your desired song
         length**. The longer it is, the longer it will take, and vice versa. Typically, writing some 200-word
-        songs will take  *some minutes*.""")
+        songs will take *a few minutes minutes*.""")
 
 taylor_swift = get_SwiftAI(get_cache_time())
 pred_len = taylor_swift.pred_length
