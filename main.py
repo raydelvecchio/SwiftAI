@@ -29,6 +29,7 @@ with st.sidebar:
     st.markdown("""# Why Make This?""")
     st.markdown("""I was extremely bored before I start my internship this summer, and as a Swift fan, decided
                  this was the best use of my time.""")
+    st.text("Built June 2022 by Ray Del Vecchio")
 
 taylor_swift = get_SwiftAI(get_cache_time())
 pred_len = taylor_swift.pred_length
