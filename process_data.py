@@ -58,6 +58,7 @@ def preformat(filename):
 
 
 def preprocess(filename, pred_len=5):
+    # TODO: remove the word "lyrics" from dataset
     """
     Preprocesses data into sequence/label (or input/label) pairs. Ignores all uncommon words.
     Main endpoint for preprocessing.
