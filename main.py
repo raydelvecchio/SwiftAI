@@ -29,7 +29,7 @@ pred_len = taylor_swift.pred_length
 song_length = st.slider("Desired song length (words): ", 50, 400)
 
 original_seed = st.text_input(f'Enter your {pred_len}-word seed phrase here. For example: \"I knew you were '
-                              f'trouble\". (separated by spaces please):').lower()
+                              f'trouble\". (separated by spaces please):').lower().strip()
 
 if len(original_seed.split(' ')) != pred_len:
     st.text(f'Please input exactly {pred_len} words separated by spaces.')
