@@ -1,6 +1,7 @@
 import streamlit as st
 from songwriter import write_songs
 from streamlit_support import *
+from constants import MAX_SITE_LEN
 
 st.set_page_config(page_title="SwiftAI", layout="wide", page_icon="favicon.ico")
 st.title("Taylor Swift Song Generator: SwiftAI")
@@ -26,7 +27,9 @@ with st.sidebar:
 taylor_swift = get_SwiftAI(get_cache_time())
 pred_len = taylor_swift.pred_length
 
-song_length = st.slider("Desired song length (words): ", 50, 200)
+song_length = st.slider("Desired song length (words): ", 50, MAX_SITE_LEN)
+if song_length > MAX_SITE_LEN:  # intercepts inspect element above max length
+    st.text(f'Nice try buddy. Use a value with max length {MAX_SITE_LEN}.')
 
 original_seed = st.text_input(f'Enter your {pred_len}-word seed phrase here. For example: \"I knew you were '
                               f'trouble\" (separated by spaces). Press enter/return to generate: ').lower().strip()

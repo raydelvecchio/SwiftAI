@@ -15,3 +15,5 @@ SAVE_LOCATION = 'saved_model'
 TEMPERATURES = [i / 10 for i in range(5, 10)]
 
 VALIDATION_SZ = 0.03
+
+MAX_SITE_LEN = 200
