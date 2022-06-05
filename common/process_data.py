@@ -24,7 +24,7 @@ def txt_dump():
     Writes all lyrics into one large text file.
     """
     filenames = [f'data_dump/Lyrics_{i.replace(" ", "")}.json' for i in ALBUMS]
-    with open('data_dump/all_lyrics.txt', 'w') as txt:
+    with open('../data_dump/all_lyrics.txt', 'w') as txt:
         for name in filenames:
             file = open(name)
             data = json.load(file)
@@ -105,4 +105,4 @@ def preprocess(filename, pred_len=5):
 
 
 if __name__ == "__main__":
-    preprocess('data_dump/all_lyrics.txt')
+    preprocess('../data_dump/all_lyrics.txt')

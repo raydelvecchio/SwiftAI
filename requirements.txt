@@ -4,3 +4,4 @@ nltk
 lyricsgenius
 pandas
 sklearn
+streamlit
