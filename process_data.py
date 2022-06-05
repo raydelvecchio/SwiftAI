@@ -36,11 +36,10 @@ def preformat(filename):
     conn.close()
     songs_as_text = ""
     for song in songs_list:
-        print(song[0][0:10])
         songs_as_text += song[0] + "\n\n"  # need the 0th index because each element is a tuple from fetchall()
     corpus = remove_chars(songs_as_text)
     corpus = corpus.split(' ')
-    print("Total Words: " + str(len(corpus)))
+    # print("Total Words: " + str(len(corpus)))
     frequency_dist = FreqDist(corpus)
     most_common = frequency_dist.most_common()
     common = list()
@@ -52,8 +51,8 @@ def preformat(filename):
             uncommon.append(word[0])
     common = sorted(list(set(common)))
     uncommon = sorted(list(set(uncommon)))
-    print(f'Unique UNCOMMON words (LESS than {UNK_CUTOFF} appearances): {len(uncommon)}')
-    print(f'Unique COMMON words (MORE than {UNK_CUTOFF} appearances): {len(common)}')
+    # print(f'Unique UNCOMMON words (LESS than {UNK_CUTOFF} appearances): {len(uncommon)}')
+    # print(f'Unique COMMON words (MORE than {UNK_CUTOFF} appearances): {len(common)}')
     return corpus, common, uncommon
 
 
@@ -76,7 +75,7 @@ def preprocess(filename, pred_len=5):
             inputs.append(corpus[i:i + pred_len])
             labels.append(corpus[i + pred_len])
 
-    print(f'Number of text input-label pairs: {len(inputs)}')
+    # print(f'Number of text input-label pairs: {len(inputs)}')
 
     # uses 3% of dataset for model validation
     train_I, test_I, train_L, test_L = train_test_split(inputs, labels, random_seed=69)
