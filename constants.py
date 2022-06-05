@@ -8,7 +8,7 @@ import os
 
 ALBUMS = ['Taylor Swift', 'Fearless', 'Speak Now', 'Red', '1989', 'Reputation', 'Lover', 'Folklore', 'Evermore']
 
-DATA_LOCATION = 'data_dump/all_lyrics.txt'
+DATA_LOCATION = 'data_dump/lyrics_db.db'
 
 SAVE_LOCATION = 'saved_model'
 

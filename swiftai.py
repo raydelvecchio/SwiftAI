@@ -7,6 +7,7 @@ from constants import DATA_LOCATION, SAVE_LOCATION, TEMPERATURES
 
 
 # TODO: fix this "warning: LF will be replaced by CRLF in saved_model/keras_metadata.pb."
+# TODO: fix codex errors "UnicodeDecodeError: 'utf-8' codec can't decode byte 0x92 in position 4770: invalid start byte"
 
 
 class SwiftAI:

@@ -20,7 +20,8 @@ with st.sidebar:
     st.markdown("""# Wait Time Information""")
     st.markdown("""Writing new songs is a *creative* process. The time to generate songs will **depend on your desired song
         length**. The longer it is, the longer it will take, and vice versa. Typically, writing some 200-word
-        songs will take *a few minutes minutes*.""")
+        songs will take *a few minutes minutes*. The first time you load this site, it may take some extra
+        time to pre-load data.""")
 
 taylor_swift = get_SwiftAI(get_cache_time())
 pred_len = taylor_swift.pred_length

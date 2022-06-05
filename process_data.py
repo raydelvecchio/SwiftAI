@@ -3,6 +3,7 @@ import re
 from nltk import FreqDist
 import numpy as np
 from itertools import chain
+import sqlite3
 
 
 def remove_chars(text):
@@ -28,10 +29,18 @@ def preformat(filename):
     list of all unique uncommon words.
     """
     UNK_CUTOFF = 5  # number of times a word must appear to be included in corpus
-    with open(filename, 'r') as f:
-        corpus = remove_chars(f.read())
+    conn = sqlite3.connect(filename)
+    curr = conn.cursor()
+    curr.execute("""SELECT * FROM lyrics""")
+    songs_list = curr.fetchall()  # list of all songs fetched from sql database
+    conn.close()
+    songs_as_text = ""
+    for song in songs_list:
+        print(song[0][0:10])
+        songs_as_text += song[0] + "\n\n"  # need the 0th index because each element is a tuple from fetchall()
+    corpus = remove_chars(songs_as_text)
     corpus = corpus.split(' ')
-    # print("Total Words: " + str(len(corpus)))
+    print("Total Words: " + str(len(corpus)))
     frequency_dist = FreqDist(corpus)
     most_common = frequency_dist.most_common()
     common = list()
@@ -43,8 +52,8 @@ def preformat(filename):
             uncommon.append(word[0])
     common = sorted(list(set(common)))
     uncommon = sorted(list(set(uncommon)))
-    # print(f'Unique UNCOMMON words (LESS than {UNK_CUTOFF} appearances): {len(uncommon)}')
-    # print(f'Unique COMMON words (MORE than {UNK_CUTOFF} appearances): {len(common)}')
+    print(f'Unique UNCOMMON words (LESS than {UNK_CUTOFF} appearances): {len(uncommon)}')
+    print(f'Unique COMMON words (MORE than {UNK_CUTOFF} appearances): {len(common)}')
     return corpus, common, uncommon
 
 
@@ -66,7 +75,7 @@ def preprocess(filename, pred_len=5):
             inputs.append(corpus[i:i + pred_len])
             labels.append(corpus[i + pred_len])
 
-    # print(f'Number of text input-label pairs: {len(inputs)}')
+    print(f'Number of text input-label pairs: {len(inputs)}')
 
     # uses 3% of dataset for model validation
     train_I, test_I, train_L, test_L = train_test_split(inputs, labels, random_seed=69)
@@ -121,4 +130,4 @@ def train_test_split(*arrays, test_size=VALIDATION_SZ, shufffle=True, random_see
 
 
 if __name__ == "__main__":
-    preprocess('data_dump/all_lyrics.txt')
+    preprocess(DATA_LOCATION)
