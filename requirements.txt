@@ -2,6 +2,5 @@ tensorflow-cpu
 numpy
 nltk
 lyricsgenius
-pandas
 sklearn
 streamlit
