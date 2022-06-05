@@ -5,8 +5,8 @@ import numpy as np
 from process_data import preprocess
 from constants import DATA_LOCATION, SAVE_LOCATION, TEMPERATURES
 
+
 # TODO: fix this "warning: LF will be replaced by CRLF in saved_model/keras_metadata.pb."
-# TODO: shave off 8 megabytes - reduce model size? don't use NLTK and write own method for preprocess?
 
 
 class SwiftAI:
