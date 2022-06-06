@@ -141,6 +141,7 @@ class SwiftAI:
         """
         song = song.replace('\n\n\n', '\n\n')
         song = song.replace('\n\n', '\n')
+        song = song.replace('\n ', '\n')
         return song
 
     def mask_seed(self, seed):
