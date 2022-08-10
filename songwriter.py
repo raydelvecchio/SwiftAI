@@ -17,4 +17,4 @@ def write_songs(swift_ai, preset_seed, song_length):
 
 if __name__ == "__main__":
     taylor_swift = SwiftAI(DATA_LOCATION)
-    write_songs(taylor_swift, 'i knew you were trouble')
+    write_songs(taylor_swift, 'i knew you were trouble', 50)
