@@ -9,8 +9,5 @@ Neural network for generating new Taylor Swift songs!! Deployed at [swiftai.hero
 * streamlit
 
 # Improvements:
-* Use bidirectional GRU instead of LSTM
-* Remove use of validation set and train on entire corpus instead
-  * Since our novel inputs to generate songs are all within the corpus anyway
 * Remove word "lyrics" from dataset; this is just metadata
 * Generalize to all artists; we can train a model to write like any artist as long as we provide their album names!

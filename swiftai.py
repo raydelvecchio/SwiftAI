@@ -1,27 +1,27 @@
 import random
-from keras.layers import Dense, Activation, LSTM, Bidirectional, Embedding
+from keras.layers import Dense, Activation, GRU, Embedding
 from keras.models import Sequential, load_model
 import numpy as np
 from process_data import preprocess
-from constants import DATA_LOCATION, SAVE_LOCATION, TEMPERATURES
+from constants import DATA_LOCATION, SAVE_LOCATION, TEMPERATURES, PRED_LEN
 
 
 class SwiftAI:
-    def __init__(self, data_file, pred_len=5):
+    def __init__(self, data_file, pred_len=PRED_LEN):
         """
         INIT FUNCTION. Define all hyperparameters here, including prediction length!
         """
         # preprocesses data in the init function since we need all of this even to generate new songs.
         # because of this, every time we change the preprocess function (different cutoffs, pre_len, etc) we'll
         # have to re-train and save the model to match.
-        self.train_I, self.test_I, self.train_L, self.test_L, self.dictionary = preprocess(data_file, pred_len)
-        self.total_sequences = len(self.train_I) + len(self.test_I)
+        self.inputs, self.labels, self.dictionary = preprocess(data_file, pred_len)
+        self.total_sequences = len(self.inputs)
         self.num_unique_words = len(self.dictionary)
         self.pred_length = pred_len
         self.batch_sz = 64
-        self.embedding_out_sz = 128
-        self.lstm_hidden_dim = 256
-        self.epochs = 20
+        self.embedding_out_sz = 100
+        self.lstm_hidden_dim = 200
+        self.epochs = 30
         self.model = self.create_model()
 
     def create_model(self):
@@ -30,20 +30,18 @@ class SwiftAI:
         """
         nn = Sequential()
         nn.add(Embedding(input_dim=self.num_unique_words, output_dim=self.embedding_out_sz))
-        nn.add(Bidirectional(LSTM(self.lstm_hidden_dim)))
+        nn.add(GRU(self.lstm_hidden_dim))
         nn.add(Dense(self.num_unique_words))
         nn.add(Activation('softmax'))
-        nn.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        nn.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
         return nn
 
     def train(self):
         """
         Trains our Taylor Swift model on the dataset!
         """
-        self.model.fit(self.generator_func(self.train_I, self.train_L),
-                       steps_per_epoch=self.total_sequences / self.batch_sz + 1,
-                       epochs=self.epochs, validation_data=self.generator_func(self.test_I, self.train_L),
-                       validation_steps=int(len(self.train_L) / self.batch_sz) + 1)
+        self.model.fit(self.generator_func(self.inputs, self.labels),
+                       steps_per_epoch=self.total_sequences / self.batch_sz + 1, epochs=self.epochs)
 
     def generator_func(self, X, Y):
         place = 0
@@ -77,9 +75,9 @@ class SwiftAI:
         likely next word (via argmax) and return it.
         :param preds: predictions from our model (outputs) for a given seed phrase
         :param temperature: in machine learning, temperature is a number applied to softmax which represents the
-        confidence of the model. By applying low temperatures, we're telling softmax to behave confidently, and err
+        confidence of the model. By applying low temperatures (below 1), we're telling softmax to behave confidently, and err
         on the side of caution. In effect, this results in more repeat words being placed, because our weights
-        more confidently correlate them with one another. However, with high temperature, we tell softmax to behave
+        more confidently correlate them with one another. However, with high temperature (above 1), we tell softmax to behave
         less confidently. Higher temperatures flatten the "spiky" distribution across words depending on how high it is.
         This is good for us, because it will give a more equal distribution over all possible words and
         result in more randomness, which would make better songs. Simply check the outputs of write_songs to see
@@ -159,6 +157,6 @@ class SwiftAI:
 
 
 if __name__ == "__main__":
-    swift = SwiftAI(DATA_LOCATION, pred_len=5)
+    swift = SwiftAI(DATA_LOCATION)
     swift.train()
     swift.save_model(SAVE_LOCATION)

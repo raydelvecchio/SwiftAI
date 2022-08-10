@@ -12,8 +12,8 @@ DATA_LOCATION = 'data_dump/lyrics_db.db'
 
 SAVE_LOCATION = 'saved_model'
 
-TEMPERATURES = [i / 10 for i in range(7, 10)]
+TEMPERATURES = [0.8, 0.9, 0.95, 1, 1.05, 1.15]
 
-VALIDATION_SZ = 0.03
+PRED_LEN = 7
 
 MAX_SITE_LEN = 200

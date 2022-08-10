@@ -2,7 +2,6 @@ from constants import *
 import re
 from nltk import FreqDist
 import numpy as np
-from itertools import chain
 import sqlite3
 
 
@@ -53,7 +52,7 @@ def preformat(filename):
     return corpus, common, uncommon
 
 
-def preprocess(filename, pred_len=5):
+def preprocess(filename, pred_len):
     """
     Preprocesses data into sequence/label (or input/label) pairs. Ignores all uncommon words.
     Main endpoint for preprocessing.
@@ -71,57 +70,15 @@ def preprocess(filename, pred_len=5):
             inputs.append(corpus[i:i + pred_len])
             labels.append(corpus[i + pred_len])
 
-    # uses 3% of dataset for model validation
-    train_I, test_I, train_L, test_L = train_test_split(inputs, labels, random_seed=69)
+    # shuffling data
+    elements = len(inputs)
+    inputs, labels = np.array(inputs), np.array(labels)
+    ids = np.random.permutation(elements)
+    inputs = inputs[ids]
+    labels = labels[ids]
 
-    return train_I, test_I, train_L, test_L, dictionary
-
-
-# method from stackoverflow to reduce package size from scikit learn
-def _indexing(x, indices):
-    """
-    :param x: array from which indices has to be fetched
-    :param indices: indices to be fetched
-    :return: sub-array from given array and indices
-    """
-    # np array indexing
-    if hasattr(x, 'shape'):
-        return x[indices]
-
-    # list indexing
-    return [x[idx] for idx in indices]
-
-
-# method from stackoverflow to reduce package size from scikit learn
-def train_test_split(*arrays, test_size=VALIDATION_SZ, shufffle=True, random_seed=1):
-    """
-    splits array into train and test data.
-    :param arrays: arrays to split in train and test
-    :param test_size: size of test set in range (0,1)
-    :param shufffle: whether to shuffle arrays or not
-    :param random_seed: random seed value
-    :return: return 2*len(arrays) divided into train ans test
-    """
-    # checks
-    assert 0 < test_size < 1
-    assert len(arrays) > 0
-    length = len(arrays[0])
-    for i in arrays:
-        assert len(i) == length
-
-    n_test = int(np.ceil(length * test_size))
-    n_train = length - n_test
-
-    if shufffle:
-        perm = np.random.RandomState(random_seed).permutation(length)
-        test_indices = perm[:n_test]
-        train_indices = perm[n_test:]
-    else:
-        train_indices = np.arange(n_train)
-        test_indices = np.arange(n_train, length)
-
-    return list(chain.from_iterable((_indexing(x, train_indices), _indexing(x, test_indices)) for x in arrays))
+    return inputs, labels, dictionary
 
 
 if __name__ == "__main__":
-    preprocess(DATA_LOCATION)
+    print(preprocess(DATA_LOCATION, PRED_LEN)[0])

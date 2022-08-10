@@ -39,7 +39,7 @@ if song_length > MAX_SITE_LEN:  # intercepts inspect element above max length
     st.text(f'Nice try buddy. Use a value with max length {MAX_SITE_LEN}.')
 
 original_seed = st.text_input(f'Enter your {pred_len}-word seed phrase here. For example: \"I want to love '
-                              f'you\" (separated by spaces). Press enter/return to generate: ').lower().strip()
+                              f'you right now\" (separated by spaces). Press enter/return to generate: ').lower().strip()
 
 if len(original_seed.split(' ')) != pred_len:
     st.text(f'Please input exactly {pred_len} words separated by spaces.')
