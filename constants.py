@@ -12,7 +12,7 @@ DATA_LOCATION = 'data_dump/lyrics_db.db'
 
 SAVE_LOCATION = 'saved_model'
 
-TEMPERATURES = [0.8, 0.9, 0.95, 1, 1.05, 1.15]
+TEMPERATURES = [0.8, 0.9, 1, 1.05, 1.1]
 
 PRED_LEN = 7
 
